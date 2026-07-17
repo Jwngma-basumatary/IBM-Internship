@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Layout</title>
+  <style>
+    /* 1. Universal CSS Reset & Global Layout Rules */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-content: center;
+      background: linear-gradient(135deg, #fcd34d, #fca5a5);
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #b45309;
+      margin-bottom: 25px;
+      letter-spacing: 3px;
+      font-size: 2.5rem;
+    }
+
+    /* 2. Main Parent Container Case */
+    .container {
+      background: #fbcfe8;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      max-width: 1100px;
+      width: 100%;
+      
+      /* Grid template to handle the 6 keyboard rows */
+      display: grid;
+      grid-template-rows: repeat(6, 50px);
+      gap: 10px; /* Space between rows and keys */
+    }
+
+    /* Target rows directly inside the container */
+    .container > div {
+      display: grid;
+      gap: 8px; /* Space between individual keys */
+    }
+
+    /* 3. Defining Specific Key Grid Tracks Per Row */
+    .row-1 { grid-template-columns: repeat(16, 1fr); }
+    .row-2 { grid-template-columns: repeat(13, 1fr) 2fr 1fr; } 
+    .row-3 { grid-template-columns: 1.5fr repeat(12, 1fr) 1.5fr 1fr; } 
+    .row-4 { grid-template-columns: 1.75fr repeat(11, 1fr) 2.25fr 1fr; } 
+    .row-5 { grid-template-columns: 2.25fr repeat(10, 1fr) 2.25fr 1fr 1fr; } 
+    .row-6 { grid-template-columns: repeat(4, 1.25fr) 7fr repeat(3, 1.25fr) repeat(3, 1fr); }
+
+    /* 4. Child Elements (The Uniform Keycaps) */
+    .child {
+      background: #fae8ff;
+      border: 1px solid #d8b4fe;
+      border-radius: 6px;
+      color: #4a044e;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 0 #e9d5ff;
+      transition: all 0.05s ease;
+      
+      /* Center alignment inside individual keycaps */
+      display: grid;
+      place-items: center;
+    }
+
+    /* Active press state animation */
+    .child:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 #e9d5ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>KEYBOARD</h1>
+
+  <!-- Parent Container -->
+  <div class="container">
+    
+    <!-- Row 1 -->
+    <div class="row-1">
+      <div class="child">Esc</div><div class="child">F1</div><div class="child">F2</div><div class="child">F3</div><div class="child">F4</div><div class="child">F5</div><div class="child">F6</div><div class="child">F7</div><div class="child">F8</div><div class="child">F9</div><div class="child">F10</div><div class="child">F11</div><div class="child">F12</div><div class="child">Insect</div><div class="child">printScr</div><div class="child">Delete</div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row-2">
+      <div class="child">-</div><div class="child">1</div><div class="child">2</div><div class="child">3</div><div class="child">4</div><div class="child">5</div><div class="child">6</div><div class="child">7</div><div class="child">8</div><div class="child">9</div><div class="child">10</div><div class="child">-</div><div class="child">=</div><div class="child">Backspace</div><div class="child">Home</div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row-3">
+      <div class="child">Tab</div><div class="child">Q</div><div class="child">W</div><div class="child">E</div><div class="child">R</div><div class="child">T</div><div class="child">Y</div><div class="child">U</div><div class="child">I</div><div class="child">O</div><div class="child">P</div><div class="child">{</div><div class="child">}</div><div class="child">\</div><div class="child">Pg Up</div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="row-4">
+      <div class="child">Caps Lock</div><div class="child">A</div><div class="child">S</div><div class="child">D</div><div class="child">F</div><div class="child">G</div><div class="child">H</div><div class="child">I</div><div class="child">J</div><div class="child">K</div><div class="child">L</div><div class="child">:</div><div class="child">"</div><div class="child">Enter</div><div class="child">Pg Dn</div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="row-5">
+      <div class="child">Shift</div><div class="child">Z</div><div class="child">X</div><div class="child">C</div><div class="child">V</div><div class="child">B</div><div class="child">N</div><div class="child">M</div><div class="child">&lt;</div><div class="child">&gt;</div><div class="child">?</div><div class="child">Shift</div><div class="child">↑</div><div class="child">End</div>
+    </div>
+
+    <!-- Row 6 -->
+    <div class="row-6">
+      <div class="child">Ctrl</div><div class="child">Fn</div><div class="child">Win</div><div class="child">Alt</div><div class="child">space</div><div class="child">Alt</div><div class="child">Fn</div><div class="child">Ctrl</div><div class="child">←</div><div class="child">↓</div><div class="child">→</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

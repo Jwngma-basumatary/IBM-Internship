@@ -1,0 +1,71 @@
+/* CSS GRID: Controls the outer layout structure */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
+    gap: 15px; /* Spacing between boxes */
+    padding: 15px;
+    border: 3px solid #333;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* FLEXBOX: Controls the content inside each individual box */
+.box {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    min-height: 80px;        /* Ensures boxes have a consistent baseline height */
+    
+    /* Visual Styling */
+    border: 2px solid #713232;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(221, 11, 11, 0.5);
+    border-radius: 4px;
+}
+
+/* Row 1 Grid Spans & Colors */
+.item-1 { 
+    grid-column: span 2; 
+    background-color: #b9cc42; 
+} 
+.item-2 { 
+    grid-column: span 1; 
+    background-color: #37717d; 
+    color: #333; 
+    text-shadow: none;
+}
+.item-3 { 
+    grid-column: span 1; 
+    background-color: #4a376c; 
+}
+
+/* Row 2 Grid Spans & Colors */
+.item-4 { 
+    grid-column: span 1; 
+    background-color: #f333ff; 
+}
+.item-5 { 
+    grid-column: span 3; 
+    background-color: #fff333; 
+    color: #333; 
+    text-shadow: none;
+}
+
+/* Row 3 Grid Spans & Colors */
+.item-6 { 
+    grid-column: span 1; 
+    background-color: #33fff3; 
+    color: #333;
+    text-shadow: none;
+}
+.item-7 { 
+    grid-column: span 1; 
+    background-color: #ff33a8; 
+}
+.item-8 { 
+    grid-column: span 2; 
+    background-color: #ff9f33; 
+}
