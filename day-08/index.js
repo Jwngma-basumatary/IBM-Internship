@@ -3,9 +3,9 @@ console.log("Hello, World!");
 // // let, const, var
 
 
-// let firstName = "John";
-// let lastName = "Doe";
-// console.log(firstName+ " "+ lastName)   //Concatenation
+ let firstName = "John";
+ let lastName = "Doe";
+ console.log(firstName+ " "+ lastName)   //Concatenation
 
 
 
